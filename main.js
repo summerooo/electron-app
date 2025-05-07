@@ -1,6 +1,13 @@
 const { app, BrowserWindow } = require('electron/main')
 const path = require('node:path')
-require('update-electron-app')()
+const updateElectronApp = require('update-electron-app');
+
+// 自动更新配置
+updateElectronApp({
+  repo: 'summerooo/electron-app',
+  updateInterval: '1 minute',
+  logger: console
+});
 
 const createWindow = () => {
   const win = new BrowserWindow({
