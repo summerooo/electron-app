@@ -1,7 +1,8 @@
-const { contextBridge } = require('electron/renderer')
+const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('versions', {
-  node: () => process.versions.node,
-  chrome: () => process.versions.chrome,
-  electron: () => process.versions.electron
-})
+contextBridge.exposeInMainWorld('electronAPI', {
+  getVideoFiles: () => ipcRenderer.invoke('get-video-files'),
+  selectCustomVideo: () => ipcRenderer.invoke('select-custom-video'),
+  setWallpaper: (videoPath) => ipcRenderer.send('set-wallpaper', videoPath),
+  onSetWallpaperResult: (callback) => ipcRenderer.on('set-wallpaper-result', (event, result) => callback(result))
+});

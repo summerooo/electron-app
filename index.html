@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <title>Hello from Electron renderer!</title>
-  </head>
-  <body>
-    111123123123123123123123
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-    <p id="info"></p>
-  </body>
-  <script src="./renderer.js"></script>
+<head>
+  <title>视频壁纸选择器</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 10px 0; }
+    button { padding: 5px 10px; margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <h1>选择视频壁纸</h1>
+  <ul id="video-list"></ul>
+  <button onclick="selectCustomVideo()">选择其他视频</button>
+  <script src="renderer.js"></script>
+</body>
 </html>
