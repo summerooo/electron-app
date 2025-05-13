@@ -1,18 +1,28 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>视频壁纸选择器</title>
+  <meta charset="UTF-8" />
+  <title>Electron Wallpaper</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 10px 0; }
-    button { padding: 5px 10px; margin-left: 10px; }
+    body {
+      margin: 0;
+      background: black;
+    }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
   </style>
 </head>
 <body>
-  <h1>选择视频壁纸</h1>
-  <ul id="video-list"></ul>
-  <button onclick="selectCustomVideo()">选择其他视频</button>
-  <script src="renderer.js"></script>
+  <video autoplay loop muted>
+    <source src="./videos/3.mp4" type="video/mp4" />
+  </video>
 </body>
 </html>
